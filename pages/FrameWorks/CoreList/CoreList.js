@@ -4,6 +4,7 @@ Component({
    * 组件的属性列表
    */
   properties: {
+    count:{type: Number},
     has_more: {type: Boolean},
     top: { type: Number },
     bottom: { type: Number }

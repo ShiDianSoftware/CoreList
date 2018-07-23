@@ -12,7 +12,7 @@ Page({
 
   onLoad: function(){
 
-    CoreListTool.prepare(this, "https://abcstarapi.zhongsuchina.com/test/index/index",{},0,200)
+    CoreListTool.prepare(this, "https://abcstarapi.zhongsuchina.com/test/index/index",{},200,200)
     
   },
 

@@ -1,6 +1,6 @@
 
 <view class='list'>
-  <corelist top="{{top}}" bottom="{{bottom}}" has_more="{{has_more}}" class='corelist' >
+  <corelist count="{{dataList.length}}" top="{{top}}" bottom="{{bottom}}" has_more="{{has_more}}" class='corelist' >
     <view class='item' wx:for="{{dataList}}">
       <view>{{index+1}}</view>
       <view>{{index+1}}: {{item.title}}</view>

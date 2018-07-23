@@ -35,8 +35,6 @@ CoreListTool.onReachBottom = function () {
   this.footerRefresh()
 }
 
-
-
 CoreListTool.headerRefresh = function (params_new) {
 
   if (params_new != null) { CoreListTool.params = params_new}
