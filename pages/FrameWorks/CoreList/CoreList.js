@@ -4,7 +4,8 @@ Component({
    * 组件的属性列表
    */
   properties: {
-    count:{type: Number},
+    request_begin: {type: Boolean},
+    count: {type: Number},
     has_more: {type: Boolean},
     top: { type: Number },
     bottom: { type: Number }
@@ -14,7 +15,7 @@ Component({
    * 组件的初始数据
    */
   data: {
-
+    
   },
 
   /**
@@ -25,6 +26,7 @@ Component({
   },
 
   ready: function(){
+
   }
 
 })

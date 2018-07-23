@@ -16,10 +16,6 @@ Page({
     
   },
 
-  onPullDownRefresh: function(){
-    CoreListTool.onPullDownRefresh()
-  },
-
   onReachBottom: function(){
     CoreListTool.onReachBottom()
   }

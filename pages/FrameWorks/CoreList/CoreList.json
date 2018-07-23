@@ -1,6 +1,3 @@
 {
-  "component": true,
-  "usingComponents": {
-    "nothing": "./Nothing/Nothing"
-  }
+  "component": true
 }

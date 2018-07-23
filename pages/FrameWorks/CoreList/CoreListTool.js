@@ -22,12 +22,10 @@ CoreListTool.prepare = function(page,url, params,top=0,bottom=0){
   CoreListTool.url = url
   CoreListTool.params = params
 
-  wx.startPullDownRefresh()
-}
+ setTimeout(function(){
+   CoreListTool.headerRefresh()
+ },2000)
 
-CoreListTool.onPullDownRefresh = function () {
-
-  this.headerRefresh()
 }
 
 CoreListTool.onReachBottom = function () {
@@ -51,10 +49,15 @@ CoreListTool.headerRefresh = function (params_new) {
 
   AppHttp.post(url, params, 0, function (ms) {
 
+    weak_self.page.setData({request_begin: true })
+
+
+    let count = ms.length
     wx.stopPullDownRefresh()
-    let has_more = ms.length >= weak_self.ps
+    let has_more = count >= weak_self.ps
     weak_self.has_more = has_more
-    weak_self.page.setData({ dataList: ms, has_more: has_more})
+    
+    weak_self.page.setData({ dataList: ms, has_more: has_more, count: count})
 
   })
 }
@@ -92,7 +95,7 @@ CoreListTool.footerRefresh = function () {
 
     weak_self.has_more = has_more
 
-    weak_self.page.setData({ dataList: ms_new, has_more: has_more })
+    weak_self.page.setData({ dataList: ms_new, has_more: has_more})
 
   })
 }
