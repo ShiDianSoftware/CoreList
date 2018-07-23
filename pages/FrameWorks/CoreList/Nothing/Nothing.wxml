@@ -1,0 +1,8 @@
+<view class='main display_flex justify_center width_100 height_100 '>
+  <view class='main_sub display_flex flex_column align_items_center justify_center'>
+      <view class='nothing_pic'>
+          <image src='./kong@3x.png'></image>
+      </view>
+      <view class='nothing_explain'>快去登录发布绘本吧~</view>
+  </view> 
+</view>

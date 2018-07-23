@@ -1,0 +1,11 @@
+{
+  "pages": [
+    "pages/newslist/newslist"
+  ],
+  "window": {
+    "backgroundTextStyle": "black",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  }
+}

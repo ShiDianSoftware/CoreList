@@ -1,0 +1,13 @@
+<view class='list_content'>
+
+  <!-- <view class='each'>
+    <nothing class='nothing'></nothing>
+  </view> -->
+  <view class='list'>
+    <view style='height:{{top}}rpx'></view>
+    <slot></slot>
+    <view class='has_more'>{{has_more ? "正在加载 ...":"没有更多啦 ~"}}</view>
+    <view style='height:{{bottom}}rpx'></view>
+  </view>
+
+</view>
