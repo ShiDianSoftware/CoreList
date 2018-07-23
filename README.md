@@ -48,7 +48,7 @@
 
 最后在wxml中直接使用：
 
-    <corelist count="{{dataList.length}}" top="{{top}}" bottom="{{bottom}}" has_more="{{has_more}}" class='corelist' >
+    <corelist request_begin="{{request_begin}}" count="{{dataList.length}}" top="{{top}}" bottom="{{bottom}}" has_more="{{has_more}}" class='corelist' >
       <row>
     </corelist>
 
