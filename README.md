@@ -50,4 +50,4 @@
 
     <corelist top="{{top}}" bottom="{{bottom}}" has_more="{{has_more}}" class='corelist' >
 
-，特别注意： 使用页面的刷新，页面的布局需要全屏化。
+，特别注意： 使用页面的刷新，页面的ul布局需要全屏化，一定要直接撑开body。
