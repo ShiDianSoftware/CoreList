@@ -49,7 +49,7 @@ CoreListTool.headerRefresh = function (params_new) {
 
   AppHttp.post(url, params, 0, function (ms) {
 
-    weak_self.page.setData({request_begin: true })
+    
 
 
     let count = ms.length
@@ -58,7 +58,7 @@ CoreListTool.headerRefresh = function (params_new) {
     weak_self.has_more = has_more
     
     weak_self.page.setData({ dataList: ms, has_more: has_more, count: count})
-
+    weak_self.page.setData({ request_begin: true })
   })
 }
 
