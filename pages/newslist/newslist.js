@@ -1,5 +1,6 @@
 // pages/newslist.js
 let CoreListTool = require("../FrameWorks/CoreList/CoreListTool.js")
+
 Page({
 
   /**
@@ -11,7 +12,7 @@ Page({
 
   onLoad: function(){
 
-    CoreListTool.prepare(this, "https://abcstarapi.zhongsuchina.com/test/index/index",{},100,200)
+    CoreListTool.prepare(this, "https://abcstarapi.zhongsuchina.com/test/index/index",{},0,200)
     
   },
 
