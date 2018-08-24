@@ -1,5 +1,6 @@
 {
   "usingComponents": {
     "corelist": "../FrameWorks/CoreList/CoreList"
-  }
+  },
+  "enablePullDownRefresh": true
 }

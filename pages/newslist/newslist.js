@@ -1,5 +1,3 @@
-// pages/newslist.js
-let CoreListTool = require("../FrameWorks/CoreList/CoreListTool.js")
 
 Page({
 
@@ -7,17 +5,24 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    params:{}
   },
 
   onLoad: function(){
 
-    CoreListTool.prepare(this, "https://abcstarapi.zhongsuchina.com/test/index/index",{},200,200)
-    
   },
 
-  onReachBottom: function(){
-    CoreListTool.onReachBottom()
+  showData: function(e){
+    this.setData({dataList: e.detail.dataList})
+  },
+
+  onPullDownRefresh: function(){
+
+    this.setData({ refresh: true, params:{} })
+
   }
+
+
+
 
 })
