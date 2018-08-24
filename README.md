@@ -40,11 +40,7 @@
 
             <corelist url="https://abcstarapi.zhongsuchina.com/test/index/index" params="{{params}}" name="corelist" action="{{action}}" bind:showData="showData">
 
-              <view class='item' wx:for="{{corelist_ms}}">
-
-                <view>{{index+1}}</view>
-                <view>{{index+1}}: {{item.title}} {{count}}</view>
-                <view>{{index+1}}: {{item.content}}</view>
+              <view class='list' wx:for="{{corelist_ms}}">
               </view>
 
             </corelist>
