@@ -19,9 +19,9 @@ Page({
 
   onPullDownRefresh: function(){
 
-    this.setData({ action: "corelist", params: {} })
-    
-    this.setData({ action: "bot", params: {} })
+    // this.setData({ action: "corelist", params: {} })
+
+    this.setData({ action: "bot", params: { type: 101 } })
 
   }
 

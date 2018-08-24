@@ -72,6 +72,7 @@ Component({
       let weak_self = this
 
       let url = this.properties.url
+
       let params = this.properties.params || {}
 
       //页码回到初始化 = 1
