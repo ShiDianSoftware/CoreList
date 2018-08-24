@@ -39,7 +39,6 @@
 修改对应的配置文件为：
 
     {
-      "enablePullDownRefresh": true,
       "usingComponents": {
         "corelist": "../FrameWorks/CoreList/CoreList"
       }
