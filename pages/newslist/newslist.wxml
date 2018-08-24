@@ -4,19 +4,39 @@
   <view class='header'>
   
   </view>
-  <view class='main flex_1'>
+  <view class='main flex_1 display_flex flex_column'>
 
-    <corelist url="https://abcstarapi.zhongsuchina.com/test/index/index" params="{{params}}" refresh="{{refresh}}" bind:showData="showData" class='corelist' >
+    
 
-      <view class='item' wx:for="{{dataList}}">
+    <view class='top flex_1'>
 
-        <view>{{index+1}}</view>
-        <view>{{index+1}}: {{item.title}} {{count}}</view>
-        <view>{{index+1}}: {{item.content}}</view>
-      </view>
+      <corelist url="https://abcstarapi.zhongsuchina.com/test/index/index" params="{{params}}" name="corelist" action="{{action}}" bind:showData="showData">
 
-    </corelist>
+        <view class='item' wx:for="{{corelist_ms}}">
 
+          <view>{{index+1}}</view>
+          <view>{{index+1}}: {{item.title}} {{count}}</view>
+          <view>{{index+1}}: {{item.content}}</view>
+        </view>
+
+      </corelist>
+
+    </view>
+
+    <view class='bottom flex_1'>
+
+      <corelist url="https://abcstarapi.zhongsuchina.com/test/index/index" params="{{params}}" name="bot" action="{{action}}" bind:showData="showData">
+
+        <view class='item' wx:for="{{bot_ms}}">
+
+          <view>{{index+1}}</view>
+          <view>{{index+1}}: {{item.title}} {{count}}</view>
+          <view>{{index+1}}: {{item.content}}</view>
+        </view>
+
+      </corelist>
+      
+    </view>
   
   </view>
   <view class='footer'>

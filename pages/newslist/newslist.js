@@ -13,12 +13,15 @@ Page({
   },
 
   showData: function(e){
-    this.setData({dataList: e.detail.dataList})
+
+    this.setData({ [e.detail.dataListKey]: e.detail.dataList})
   },
 
   onPullDownRefresh: function(){
 
-    this.setData({ refresh: true, params:{} })
+    this.setData({ action: "corelist", params: {} })
+    
+    this.setData({ action: "bot", params: {} })
 
   }
 

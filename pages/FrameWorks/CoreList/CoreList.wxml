@@ -1,5 +1,5 @@
-<view class='corelist'>
-
+<view class='corelist' wx:if="{{dataList.length>0}}">
+<!--  -->
   <scroll-view class='width_100 height_100' scroll-y enable-back-to-top="true" bindscrolltolower="footerRefresh" scroll-with-animation="true" scroll-top="{{top}}">
 
     <view class='list_content'>

@@ -15,9 +15,11 @@ Component({
     url:{type:String},
     params: {type: Object},
 
-    refresh: { //刷新页面
-      type: Boolean,
-      value: false,
+    name:{type: String,value:"corelist"},
+
+    action: { //刷新页面
+      type: String,
+      value: "",
       observer: function (newVal, oldVal, changedPath) {
         
         this.refreshAction()
@@ -41,7 +43,7 @@ Component({
 
   ready: function () {
 
-    wx.startPullDownRefresh()
+    this.headerRefresh()
   },
 
   /**
@@ -51,16 +53,21 @@ Component({
 
     refreshAction: function(){
 
+      let name = this.properties.name
+
+      let action = this.properties.action
+
+      console.log("name=" + name, "action=" + action)
+
+      if(name != action) {return}
+      
       this.headerRefresh()
 
     },
 
     headerRefresh: function() {
 
-      this.properties.refresh = false
-
-      console.log("headerRefresh")
-
+      this.properties.action = ""
 
       let weak_self = this
 
@@ -74,7 +81,7 @@ Component({
       params.page_size = this.data.ps
       
       AppHttp.post(url, params, 0, function (ms) {
-
+       
         setTimeout(function(){
           //结束顶部刷新
           wx.stopPullDownRefresh()
@@ -91,27 +98,18 @@ Component({
           }, 200)
         }
 
-        //记录数据
-        weak_self.data.dataList = ms
-
-        var myEventDetail = { dataList: ms } // detail对象，提供给事件监听函数
-        var myEventOption = {} // 触发事件的选项
-        weak_self.triggerEvent('showData', myEventDetail, myEventOption)
-
-
         let count = ms.length
-        
-        let has_more = count >= weak_self.data.ps
-       
-        weak_self.setData({ has_more: has_more, top:0})
 
-        // weak_self.page.setData({ dataList: ms, has_more: has_more, count: count })
-        // weak_self.page.setData({ show_str: "没有数据哦 ~" })
+        let has_more = count >= weak_self.data.ps
+        //记录数据
+        weak_self.setData({ dataList: ms, has_more: has_more, top: 0 })
+
+        weak_self.pageSetData(ms)
 
 
       }, function (e) {
 
-        
+        wx.stopPullDownRefresh()
 
       })
 
@@ -137,7 +135,7 @@ Component({
       params.page_size = this.data.ps
 
       AppHttp.post(url, params, 0, function (ms) {
-
+   
         wx.stopPullDownRefresh()
 
         let has_more = ms.length >= weak_self.data.ps
@@ -151,21 +149,31 @@ Component({
 
         let ms_new = ms_old.concat(ms)
 
-
-        weak_self.setData({ has_more: has_more })
-
         //框架记录
-        weak_self.data.dataList = ms_new
+        weak_self.setData({ has_more: has_more, dataList: ms_new })
 
-        var myEventDetail = { dataList: ms_new } // detail对象，提供给事件监听函数
-        var myEventOption = {} // 触发事件的选项
-        weak_self.triggerEvent('showData', myEventDetail, myEventOption)
+        weak_self.pageSetData(ms_new)
 
-        // weak_self.page.setData({ dataList: ms_new, has_more: has_more })
+
+      },function(){
+
+        weak_self.data.p--
+
+        wx.stopPullDownRefresh()
 
       })
     },
 
+    pageSetData: function(ms){
+
+      let name = this.properties.name
+      let dataListKey = name + "_ms"
+
+      var myEventDetail = { dataList: ms, dataListKey: dataListKey} // detail对象，提供给事件监听函数
+      var myEventOption = {} // 触发事件的选项
+      this.triggerEvent('showData', myEventDetail, myEventOption)
+
+    }
 
 
   }
