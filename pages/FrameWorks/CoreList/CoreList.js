@@ -90,14 +90,14 @@ Component({
 
 
         //如果是刷新且上次没有数据的情况下,需要主动触发一次底部刷新
-        if (!weak_self.data.has_more) {
+        // if (!weak_self.data.has_more) {
 
-          setTimeout(function () {
+        //   setTimeout(function () {
 
-            weak_self.footerRefresh()
+        //     weak_self.footerRefresh()
 
-          }, 200)
-        }
+        //   }, 200)
+        // }
 
         let count = ms.length
 
@@ -168,7 +168,7 @@ Component({
     pageSetData: function(ms){
 
       let name = this.properties.name
-      let dataListKey = name + "_ms"
+      let dataListKey = name + "_dataList"
 
       var myEventDetail = { dataList: ms, dataListKey: dataListKey} // detail对象，提供给事件监听函数
       var myEventOption = {} // 触发事件的选项
