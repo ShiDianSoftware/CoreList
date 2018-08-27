@@ -21,7 +21,7 @@ Page({
 
     // this.setData({ action: "corelist", params: {} })
 
-    this.setData({ action: "bot", params: { type: 101 } })
+    this.setData({ action: "bot", bot_params: { type: 101 } })
 
   }
 

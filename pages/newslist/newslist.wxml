@@ -10,7 +10,7 @@
 
     <view class='top flex_1'>
 
-      <corelist url="https://abcstarapi.zhongsuchina.com/test/index/index" params="{{params}}" name="corelist" action="{{action}}" bind:showData="showData">
+      <corelist url="https://abcstarapi.zhongsuchina.com/test/index/index" params="{{corelist_params}}" name="corelist" action="{{action}}" bind:showData="showData">
 
         <view class='item' wx:for="{{corelist_ms}}">
 
@@ -25,7 +25,7 @@
 
     <view class='bottom flex_1'>
 
-      <corelist url="https://abcstarapi.zhongsuchina.com/test/index/index" params="{{params}}" name="bot" action="{{action}}" bind:showData="showData">
+      <corelist url="https://abcstarapi.zhongsuchina.com/test/index/index" params="{{bot_params}}" name="bot" action="{{action}}" bind:showData="showData">
 
         <view class='item' wx:for="{{bot_ms}}">
 
