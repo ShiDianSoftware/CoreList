@@ -1,45 +1,20 @@
-
-
 <view class='all width_100 height_100 display_flex flex_column'>
-  <view class='header'>
-  
-  </view>
-  <view class='main flex_1 display_flex flex_column'>
 
-    
+  <scroll-view id="list1" bindscroll="scrollAction" scroll-top="{{list1_top}}" scroll-y class='width_100 height_100' lower-threshold="50" enable-back-to-top="{{true}}" bindscrolltolower="loadMore">
 
-    <view class='top flex_1'>
-
-      <corelist url="https://abcstarapi.zhongsuchina.com/test/index/index" params="{{corelist_params}}" name="corelist" action="{{action}}" bind:showData="showData">
-
-        <view class='item' wx:for="{{corelist_ms}}">
-
-          <view>{{index+1}}</view>
-          <view>{{index+1}}: {{item.title}} {{count}}</view>
-          <view>{{index+1}}: {{item.content}}</view>
-        </view>
-
-      </corelist>
-
-    </view>
-
-    <view class='bottom flex_1'>
-
-      <corelist url="https://abcstarapi.zhongsuchina.com/test/index/index" params="{{bot_params}}" name="bot" action="{{action}}" bind:showData="showData">
-
-        <view class='item' wx:for="{{bot_ms}}">
-
-          <view>{{index+1}}</view>
-          <view>{{index+1}}: {{item.title}} {{count}}</view>
-          <view>{{index+1}}: {{item.content}}</view>
-        </view>
-
-      </corelist>
+    <view data-index="{{index}}" class='item' wx:for="{{list1}}">
+      <view class='real_item' wx:if="{{item != null}}">
+        {{index}}-{{item.title}}
+      </view>
       
     </view>
-  
-  </view>
-  <view class='footer'>
-  
-  </view>
+
+    <view class='footer_view'>
+        <text>努力加载中 ~</text>
+        <text>没有更多啦 ~</text>
+    </view>
+
+  </scroll-view>
+
+
 </view>
