@@ -31,7 +31,7 @@ let CoreListClass = function () { }
 CoreListClass.prototype.p = 1
 CoreListClass.prototype.ps = 10
 CoreListClass.prototype.first_show_index = 0
-CoreListClass
+
 
 CoreListClass.prototype.prepare = function (page, id, url, params, arr_key) {
 
@@ -43,11 +43,12 @@ CoreListClass.prototype.prepare = function (page, id, url, params, arr_key) {
   let weak_self = this
 
   //页面下拉加载更多
-  page.loadMore = function (e) {
+  let loadMore = id + "loadMore" 
+  page[[loadMore]] = function (e) {
 
     let load_more_id = e.target.id
-
-    if (load_more_id != id) {
+    
+    if (load_more_id != weak_self.id) {
       return
     }
 
@@ -56,9 +57,15 @@ CoreListClass.prototype.prepare = function (page, id, url, params, arr_key) {
   }
 
   //列表滚动
-  page.scrollAction = function (e) {
+  let scrollAction = id +"ScrollAction"
+  
+  page[[scrollAction]] = function (e) {
 
     let id = weak_self.id
+
+    let corelist_obj = [id]
+
+    console.log(id, e.target.id)
 
     let load_more_id = e.target.id
 
@@ -241,9 +248,5 @@ CoreListClass.prototype.showData = function (is_top) {
 
   }
 }
-
-
-
-
 
 module.exports = CoreListClass

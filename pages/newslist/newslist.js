@@ -10,7 +10,8 @@ Page({
    */
   data: {
     params:{},
-    corelist_params:{}
+    corelist_params:{},
+    name:"list1"
   },
 
   onLoad: function(){
@@ -20,12 +21,21 @@ Page({
     let list1 = new CoreListClass()
 
     let url1 = "https://abcstarapi.zhongsuchina.com/art/basic/index"
-    let params1 = {}
+    let params1 = {"item":"101"}
     list1.prepare(this, "list1", url1, params1)
 
-    setTimeout(function(){
-      list1.refresh({ "name": "jack"})
-    },5000)
+
+    let list2 = new CoreListClass()
+
+    let url2 = "https://abcstarapi.zhongsuchina.com/art/basic/index"
+    let params2 = { "item": "102"}
+    list2.prepare(this, "list2", url2, params2)
+
+    console.log(list1, list2)
+
+    // setTimeout(function(){
+    //   list1.refresh({ "name": "jack"})
+    // },5000)
 
   }
 })
