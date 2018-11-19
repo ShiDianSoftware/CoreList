@@ -90,7 +90,11 @@ CoreListClass.prototype.prepare = function (page, id, url, params, arr_key) {
 }
 
 //顶部刷新
+CoreListClass.prototype.refresh = function (params_new) { this.headerRefresh(params_new)}
+
+//顶部刷新
 CoreListClass.prototype.headerRefresh = function (params_new) {
+
 
   if (params_new != null) {
     this.params = params_new
@@ -107,7 +111,7 @@ CoreListClass.prototype.headerRefresh = function (params_new) {
   params.page_size = this.ps
 
 
-  app.AppHttp.post(url, params, 0, function (arr) {
+  app.AppHttp.post(url, params, 1, function (arr) {
 
     let length = arr.length
 
@@ -161,7 +165,7 @@ CoreListClass.prototype.footerRefresh = function () {
 
     weak_self.has_more = has_more
 
-    weak_self.showData()
+    weak_self.showData(false)
 
   }, function () {
 
@@ -182,6 +186,7 @@ CoreListClass.prototype.showData = function (is_top) {
   let id = this.id
   let arr_key = id
   let top_key = id + "_top"
+  let fotter_view_key = id + "_str"
 
   //当前最顶行的index
   let first_show_index = this.first_show_index
@@ -217,18 +222,21 @@ CoreListClass.prototype.showData = function (is_top) {
   //放入右侧显示数组
   final_arr = final_arr.concat(right_empty_arr)
 
+  let fotter_view_str = this.has_more ? "正在加载数据 ~" : "没有更多啦 ~"
 
   if (is_top) { //顶部刷新
 
     this.page.setData({
       [arr_key]: final_arr,
-      [top_key]: 0
+      [top_key]: 0,
+      [fotter_view_key]: fotter_view_str
     })
 
   } else {
 
     this.page.setData({
-      [arr_key]: final_arr
+      [arr_key]: final_arr,
+      [fotter_view_key]: fotter_view_str
     })
 
   }

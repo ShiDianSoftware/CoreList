@@ -23,7 +23,9 @@ Page({
     let params1 = {}
     list1.prepare(this, "list1", url1, params1)
 
-
+    setTimeout(function(){
+      list1.refresh({ "name": "jack"})
+    },5000)
 
   }
 })
