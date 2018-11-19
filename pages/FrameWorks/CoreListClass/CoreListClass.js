@@ -3,8 +3,8 @@ let info = wx.getSystemInfoSync()
 let screenWidth = info.screenWidth
 
 let p = screenWidth / 375
-let rowH = 100 * p
-let show_page_num = 3 //展示3页数据
+
+let show_page_num = 5 //展示3页数据
 
 
 //使用说明
@@ -31,19 +31,22 @@ let CoreListClass = function () { }
 CoreListClass.prototype.p = 1
 CoreListClass.prototype.ps = 10
 CoreListClass.prototype.first_show_index = 0
+CoreListClass.prototype.rowH = 10
 
-
-CoreListClass.prototype.prepare = function (page, id, url, params, arr_key) {
+//rowH = 行高 + 间距
+CoreListClass.prototype.prepare = function (page, id, url, params, rowH) {
 
   this.page = page
   this.id = id
   this.url = url
   this.params = params
+  this.rowH = rowH
 
   let weak_self = this
 
   //页面下拉加载更多
   let loadMore = id + "loadMore" 
+
   page[[loadMore]] = function (e) {
 
     let load_more_id = e.target.id
@@ -65,8 +68,6 @@ CoreListClass.prototype.prepare = function (page, id, url, params, arr_key) {
 
     let corelist_obj = [id]
 
-    console.log(id, e.target.id)
-
     let load_more_id = e.target.id
 
     if (load_more_id != id) {
@@ -75,7 +76,7 @@ CoreListClass.prototype.prepare = function (page, id, url, params, arr_key) {
 
     let scrollTop = e.detail.scrollTop
 
-    let firstRowIndex = scrollTop / rowH
+    let firstRowIndex = scrollTop / weak_self.rowH
     let firstRowIndexInt = parseInt(firstRowIndex)
     let page_num = parseInt(firstRowIndexInt / weak_self.ps)
     

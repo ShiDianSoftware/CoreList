@@ -7,6 +7,7 @@
       <scroll-view id="list1" bindscroll="list1ScrollAction" scroll-top="{{list1_top}}" scroll-y class='width_100 height_100' lower-threshold="50" enable-back-to-top="{{true}}" bindscrolltolower="list1loadMore">
 
         <view data-index="{{index}}" class='item' wx:for="{{list1}}">
+        
           <view class='real_item' wx:if="{{item != null}}">
             {{index}}-{{item.title}}
           </view>
