@@ -1,16 +1,10 @@
 <view class='all width_100 height_100 display_flex flex_column'>
 
-  <swiper class='width_100 height_100 over overflow_hidden'>
 
-    <swiper-item>
-
-      <scroll-view id="list1" bindscroll="list1ScrollAction" scroll-top="{{list1_top}}" scroll-y class='width_100 height_100' lower-threshold="50" enable-back-to-top="{{true}}" bindscrolltolower="list1loadMore">
+      <!-- <scroll-view id="list1" bindscroll="list1ScrollAction" scroll-top="{{list1_top}}" scroll-y class='width_100 height_100' lower-threshold="50" enable-back-to-top="{{true}}" bindscrolltolower="list1loadMore">
 
         <view data-index="{{index}}" class='item' wx:for="{{list1}}">
         
-          <view class='real_item' wx:if="{{item != null}}">
-            {{index}}-{{item.title}}
-          </view>
 
         </view>
 
@@ -18,34 +12,18 @@
           <text>{{list1_str}}</text>
         </view>
 
-      </scroll-view>
+      </scroll-view> -->
 
 
-    </swiper-item>
+<recycle-view batch="{{batchSetRecycleData}}" id="recycleId" bindscroll="list1ScrollAction" scroll-top="{{list1_top}}" enable-back-to-top="{{true}}" bindscrolltolower="list1loadMore">
 
+  <recycle-item wx:for="{{recycleList}}">
+    <view class='real_item'>
+      {{index}}-{{item.title}}
+    </view>
+  </recycle-item>
 
-    <swiper-item>
-
-      <scroll-view id="list2" bindscroll="list2ScrollAction" scroll-top="{{list2_top}}" scroll-y class='width_100 height_100' lower-threshold="50" enable-back-to-top="{{true}}" bindscrolltolower="list2loadMore">
-
-        <view data-index="{{index}}" class='item' wx:for="{{list2}}">
-          <view class='real_item' wx:if="{{item != null}}">
-            {{index}}-{{item.title}}
-          </view>
-
-        </view>
-
-        <view class='footer_view' wx:if="{{list2.length>0}}">
-          <text>{{list2_str}}</text>
-        </view>
-
-      </scroll-view>
-
-
-    </swiper-item>
-
-  </swiper>
-
+</recycle-view>
 
 
 

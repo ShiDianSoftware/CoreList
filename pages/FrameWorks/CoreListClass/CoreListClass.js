@@ -1,10 +1,4 @@
 const app = getApp()
-let info = wx.getSystemInfoSync()
-let screenWidth = info.screenWidth
-
-let p = screenWidth / 375
-
-let show_page_num = 5 //展示3页数据
 
 
 //使用说明
@@ -31,16 +25,16 @@ let CoreListClass = function () { }
 CoreListClass.prototype.p = 1
 CoreListClass.prototype.ps = 10
 CoreListClass.prototype.first_show_index = 0
-CoreListClass.prototype.rowH = 10
+
 
 //rowH = 行高 + 间距
-CoreListClass.prototype.prepare = function (page, id, url, params, rowH) {
+CoreListClass.prototype.prepare = function (page, id, url, params) {
 
   this.page = page
   this.id = id
   this.url = url
   this.params = params
-  this.rowH = rowH
+
 
   let weak_self = this
 
@@ -58,40 +52,6 @@ CoreListClass.prototype.prepare = function (page, id, url, params, rowH) {
     weak_self.footerRefresh()
 
   }
-
-  //列表滚动
-  let scrollAction = id +"ScrollAction"
-  
-  page[[scrollAction]] = function (e) {
-
-    let id = weak_self.id
-
-    let corelist_obj = [id]
-
-    let load_more_id = e.target.id
-
-    if (load_more_id != id) {
-      return
-    }
-
-    let scrollTop = e.detail.scrollTop
-
-    let firstRowIndex = scrollTop / weak_self.rowH
-    let firstRowIndexInt = parseInt(firstRowIndex)
-    let page_num = parseInt(firstRowIndexInt / weak_self.ps)
-    
-    let page_num_last = weak_self.page_num || 0
-
-    if (page_num == page_num_last) {return}
-
-    //当前最顶行的index
-    weak_self.first_show_index = firstRowIndexInt
-    //当前index所属分页页码
-    weak_self.page_num = page_num
-    
-    weak_self.showData()
-  }
-
 
   this.headerRefresh()
 
@@ -189,46 +149,12 @@ CoreListClass.prototype.showData = function (is_top) {
   let arr = this.arr
   let length = arr.length
 
-  let final_arr = []
+  let final_arr = this.arr
 
   let id = this.id
   let arr_key = id
   let top_key = id + "_top"
   let fotter_view_key = id + "_str"
-
-  //当前最顶行的index
-  let first_show_index = this.first_show_index
-  //当前index所属分页页码
-  let page_num = this.page_num
-
-  //计算当前页面前后的分页数
-  //3=1+1+1, 5=2+1+2
-  let page_nums_LR = (show_page_num - 1) / 2
-
-  let start_index = first_show_index - page_nums_LR * this.ps
-  if (start_index <= 0) { start_index = 0}
-
-  let end_index = first_show_index + (page_nums_LR + 1) * this.ps
-  if (end_index >= length) { end_index = length}
-  
-  // console.log(first_show_index, page_num, start_index, end_index)
-
-  let arr_range = arr.slice(start_index, end_index)
-
-  //左边的空白数组
-  let left_empty_arr = start_index <= 0 ? [] : new Array(start_index)
-  let right_empty_length = parseInt(length - end_index)
-
-  if (right_empty_length < 0) { right_empty_length = 0 }
-
-  let right_empty_arr = right_empty_length <= 0 ? [] : new Array(right_empty_length)
-
-  //放入左侧空白数组
-  final_arr = final_arr.concat(left_empty_arr)
-  //放入中间显示数组
-  final_arr = final_arr.concat(arr_range)
-  //放入右侧显示数组
-  final_arr = final_arr.concat(right_empty_arr)
 
   let fotter_view_str = this.has_more ? "正在加载数据 ~" : "没有更多啦 ~"
 
