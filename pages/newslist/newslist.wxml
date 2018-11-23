@@ -17,11 +17,10 @@
 
 <recycle-view batch="{{batchSetRecycleData}}" id="recycleId" bindscroll="list1ScrollAction" scroll-top="{{list1_top}}" enable-back-to-top="{{true}}" bindscrolltolower="list1loadMore">
 
-  <recycle-item wx:for="{{recycleList}}">
-    <view class='real_item'>
-      {{index}}-{{item.title}}
-    </view>
-  </recycle-item>
+  <view slot="itemsize">
+    <template is="recycleItem" data="{{item: item, recycleList: recycleListItemSize}}"></template>
+  </view>
+  <template is="recycleItem" data="{{item: item, recycleList: recycleList}}"></template>
 
 </recycle-view>
 
@@ -29,3 +28,14 @@
 
 
 </view>
+
+
+
+<template name="recycleItem">
+  <recycle-item style="width:50%;" wx:for="{{recycleList}}" wx:key="id">
+    <view class="recycle-itemsize" style="width:100%;height:{{item.test.azFirst ? 160 : 160}}px;position: relative;">
+        <image class='recycle-image' style='width:80px;height:80px;' src="{{item.image_url}}?imageView2/2/w/120/h/0/q/120/format/jpg"></image>
+      <text class="recycle-text">{{item.idx+1}}. {{item.title}}</text>
+    </view>
+  </recycle-item>
+</template>
