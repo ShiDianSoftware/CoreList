@@ -1,4 +1,4 @@
-
+view{margin: 0; padding: 0;}
 .zindex10{z-index: 10;}
 .debug{border: solid 2px red !important;}
 .debug_green{border: solid 2px green !important;}
