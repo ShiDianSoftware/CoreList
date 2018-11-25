@@ -1,0 +1,9 @@
+<template name="list1">
+
+  <corelist id="list1" class='flex_1 animated fadeIn'>
+    <view class='row width_100 height_100' wx:for="{{dataList}}">
+      <view>这是内容{{index}}</view>
+    </view>
+  </corelist>
+
+</template>

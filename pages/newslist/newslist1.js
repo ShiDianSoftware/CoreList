@@ -16,64 +16,67 @@ Page({
    * 页面的初始数据
    */
   data: {
-    params:{},
-    corelist_params:{},
-    name:"list1"
+    params: {},
+    corelist_params: {},
+    name: "list1"
   },
 
-  onLoad: function(){
+  onLoad: function () {
 
     app.AppHttp = AppHttp
-    
+
     let list1 = new CoreListClass()
 
     let url1 = "https://abcstarapi.zhongsuchina.com/art/basic/index"
-    let params1 = {"item":"101"}
+    let params1 = { "item": "101" }
     list1.prepare(this, "list1", url1, params1)
 
 
     let list2 = new CoreListClass()
 
     let url2 = "https://abcstarapi.zhongsuchina.com/art/basic/index"
-    let params2 = { "item": "102"}
+    let params2 = { "item": "102" }
     list2.prepare(this, "list2", url2, params2)
 
-    //这个是管理列表数据的对象
-    var ctx = createRecycleContext({
-      id: 'recycleId',
-      dataKey: 'arr',
-      page: this,
-      list:[],
-      itemSize: function (item, index) {
+    // let info = wx.getSystemInfoSync()
+    // let screenWidth = info.screenWidth
+    
 
-        return {
-          width: 375,
-          height: 100
-        }
-      }
-    })
+    // //这个是管理列表数据的对象
+    // var ctx = createRecycleContext({
+    //   id: 'recycleId',
+    //   dataKey: 'arr',
+    //   page: this,
+    //   itemSize: function (item, index) {
 
-    this.ctx = ctx;
+    //     return {
+    //       width: screenWidth,
+    //       height: 100
+    //     }
+    //   }
+    // })
 
-    this.showArr()
+    // this.ctx = ctx;
+
+    // this.showArr()
 
   },
 
-  showArr: function(){
+  showArr: function () {
 
     var arr = []
 
-    for(let i=0;i<500;i++){
+    for (let i = 0; i < 500; i++) {
 
-      let id = i+1
+      let id = i + 1
 
-      let each = { id: id+"", title: "我是第" + id+"个"}
+      let each = { id: id + "", title: "我是第" + id + "个" }
 
       arr.push(each)
 
     }
 
-    this.ctx.append(arr,function(res){
+    this.ctx.append(arr, function (res) {
 
       console.log("追加完成")
 
@@ -81,5 +84,5 @@ Page({
 
   }
 
-  
+
 })
