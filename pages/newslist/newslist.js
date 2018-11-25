@@ -22,6 +22,7 @@ Page({
     let list1 = this.selectComponent('#list1')
     list1.url = "https://abcstarapi.zhongsuchina.com/art/basic/index"
     list1.params = {"name":"list1"}
+    list1.rowH = 100
     list1.page = this
 
   }

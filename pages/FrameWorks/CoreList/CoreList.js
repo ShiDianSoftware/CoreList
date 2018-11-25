@@ -3,13 +3,19 @@ const app = getApp();
 
 let AppHttp = require('../AppHttp/AppHttp.js');
 
+// 提交wx.createRecycleContext能力
+const createRecycleContext = require('../RecycleView/index.js')
+
+const info = wx.getSystemInfoSync()
+const screenWidth = info.screenWidth
+
 Component({
 
   /**
    * 组件的初始数据
    */
   data: {
-
+    name:"list1",
     dataList: [], //数据
     has_more: true, //是否有更多数据
 
@@ -19,14 +25,43 @@ Component({
 
     this.p = 1
     this.ps = 10
+    this.recycleViewPrepare()
 
     this.headerRefresh()
+
+
   },
 
   /**
    * 组件的方法列表
    */
   methods: {
+    
+    recycleViewPrepare: function(){
+
+      let id = this.id
+      let rowH = this.rowH
+      let page = this.page
+
+      //这个是管理列表数据的对象
+      var ctx = createRecycleContext({
+        id: "list11",
+        dataKey: 'dataList',
+        page: this,
+        itemSize: function (item, index) {
+
+          return {
+            width: screenWidth,
+            height: rowH //单位px
+          }
+        }
+      })
+
+      console.log(ctx)
+
+      this.ctx = ctx
+
+    },
 
     refresh: function(params) {
 
@@ -102,18 +137,9 @@ Component({
           weak_self.p--
         }
 
-        let ms_old = weak_self.data.dataList
+        weak_self.setData({ has_more: has_more})
 
-        let ms_new = ms_old.concat(ms)
-
-        //框架记录
-        weak_self.setData({
-          has_more: has_more,
-          dataList: ms_new
-        })
-
-        weak_self.pageSetData(ms_new)
-
+        weak_self.pageSetData(ms)
 
       }, function() {
 
@@ -123,10 +149,8 @@ Component({
     },
 
     pageSetData: function(ms) {
-
-      this.page.setData({
-        dataList: ms
-      })
+      
+      this.ctx.append(ms)
 
     }
 

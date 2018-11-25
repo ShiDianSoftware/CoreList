@@ -2,8 +2,6 @@
 
 <view class='all width_100 height_100 display_flex flex_column'>
 
-    <!-- 列表1: list1 -->
-    <template is="list1" data="{{dataList}}">
-    </template>
+    <corelist id="list1" class='flex_1 animated fadeIn'></corelist>
 
 </view>

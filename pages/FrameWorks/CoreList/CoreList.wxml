@@ -1,6 +1,28 @@
-<view class='corelist' wx:if="{{dataList.length>0}}">
+<import src='/pages/newslist/RowTemplete/RowTemplete' />
 
-  <scroll-view class='width_100 height_100' scroll-y enable-back-to-top="true" bindscrolltolower="footerRefresh" scroll-with-animation="true" scroll-top="{{top}}">
+<view class='corelist'>
+
+  <recycle-view id="list11" class='width_100 height_100' scroll-y enable-back-to-top="true" bindscrolltolower="footerRefresh" scroll-with-animation="true" scroll-top="{{top}}" batch="{{batchSetRecycleData}}">
+
+    <view slot="before">长列表前面的内容</view>
+
+    <recycle-item wx:for="{{dataList}}">
+
+      <template is="{{name}}" data="{{index: item.__index__, item: item}}">
+      </template>
+
+    </recycle-item>
+
+    <view slot="after">
+      <view class='has_more'>
+        <view wx:if="{{has_more}}">正在加载 ~</view>
+        <view wx:if="{{!has_more}}">没有更多啦 ~</view>
+      </view>
+    </view>
+
+  </recycle-view>
+
+  <!-- <scroll-view >
 
     <view class='list_content'>
 
@@ -14,9 +36,5 @@
 
     </view>
 
-  </scroll-view>
+  </scroll-view> -->
 </view>
-
-
-
-

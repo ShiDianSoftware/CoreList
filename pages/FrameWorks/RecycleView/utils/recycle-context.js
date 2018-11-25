@@ -25,6 +25,7 @@ function RecycleContext({
   this.placeholderClass = placeholderClass
   page._recycleViewportChange = recycleViewportChangeFunc
   this.comp = page.selectComponent('#' + id)
+
   this.itemSize = itemSize
   this.itemSizeOpt = itemSize
   // if (!this.comp) {
@@ -68,6 +69,7 @@ function RecycleContext({
   }
 }
 RecycleContext.prototype.checkComp = function () {
+ 
   if (!this.comp) {
     this.comp = this.page.selectComponent('#' + this.id)
     if (this.comp) {

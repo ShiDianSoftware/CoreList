@@ -38,23 +38,23 @@ Page({
     let params2 = { "item": "102" }
     list2.prepare(this, "list2", url2, params2)
 
-    // let info = wx.getSystemInfoSync()
-    // let screenWidth = info.screenWidth
+    let info = wx.getSystemInfoSync()
+    let screenWidth = info.screenWidth
     
 
-    // //这个是管理列表数据的对象
-    // var ctx = createRecycleContext({
-    //   id: 'recycleId',
-    //   dataKey: 'arr',
-    //   page: this,
-    //   itemSize: function (item, index) {
+    //这个是管理列表数据的对象
+    var ctx = createRecycleContext({
+      id: 'recycleId',
+      dataKey: 'arr',
+      page: this,
+      itemSize: function (item, index) {
 
-    //     return {
-    //       width: screenWidth,
-    //       height: 100
-    //     }
-    //   }
-    // })
+        return {
+          width: screenWidth,
+          height: 100
+        }
+      }
+    })
 
     // this.ctx = ctx;
 

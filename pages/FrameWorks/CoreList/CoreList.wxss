@@ -1,10 +1,13 @@
+@import '/pages/newslist/RowTemplete/RowTemplete.wxss';
+
 
 .corelist{width: 100%;height: 100%; overflow: hidden;}
 
 .each{width: 100%; height: 100%;}
 .list{width: 100%;height: 100%; overflow: hidden;}
-.has_more{height: 80rpx; line-height: 80rpx; text-align: center; color: #999; font-size: 26rpx;}
+.has_more{height: 80rpx; line-height: 80rpx; text-align: center; color: #999; font-size: 30rpx;}
 
 .width_100{width: 100%;}
 .height_100{height: 100%;}
 
+recycle-item{width: 100%;}
