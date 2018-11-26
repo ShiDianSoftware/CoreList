@@ -6,22 +6,23 @@ let AppHttp = require('../AppHttp/AppHttp.js');
 // 提交wx.createRecycleContext能力
 const createRecycleContext = require('../RecycleView/index.js')
 
-const info = wx.getSystemInfoSync()
-const screenWidth = info.screenWidth
-
 Component({
 
   /**
    * 组件的初始数据
    */
   data: {
-    name:"list1",
-    dataList: [], //数据
+    id:null, //ready后获取到
+    rcid: null, //createRecycleContext对应的id,根据id生成
     has_more: true, //是否有更多数据
 
   },
 
   ready: function() {
+
+    let id = this.id
+    let rcid = "rc_" + id
+    this.setData({ id: id, rcid: rcid})
 
     this.p = 1
     this.ps = 10
@@ -39,28 +40,20 @@ Component({
     
     recycleViewPrepare: function(){
 
-      let id = this.id
-      let rowH = this.rowH
+      let rcid = this.data.rcid
+      
       let page = this.page
+      let itemSize = this.itemSize
 
       //这个是管理列表数据的对象
       var ctx = createRecycleContext({
-        id: "list11",
+        id: rcid,
         dataKey: 'dataList',
-        page: this,
-        itemSize: function (item, index) {
-
-          return {
-            width: screenWidth,
-            height: rowH //单位px
-          }
-        }
+        itemSize: itemSize,
+        page: this
       })
 
-      console.log(ctx)
-
       this.ctx = ctx
-
     },
 
     refresh: function(params) {
@@ -70,12 +63,14 @@ Component({
       }
 
       this.headerRefresh()
-
     },
 
     headerRefresh: function() {
 
       let weak_self = this
+
+      //顶部刷新开始
+      if (weak_self.page.headerRefreshStatus) { weak_self.page.headerRefreshStatus(100) }
 
       let url = this.url
 
@@ -95,16 +90,24 @@ Component({
 
         //记录数据
         weak_self.setData({
-          dataList: ms,
           has_more: has_more,
           top: 0
         })
 
-        weak_self.pageSetData(ms)
+        weak_self.pageSetData(ms, true)
 
+        //顶部刷新成功
+        if (weak_self.page.headerRefreshStatus) { weak_self.page.headerRefreshStatus(101)}
 
       }, function(e) {
 
+        //记录数据
+        weak_self.setData({
+          has_more: false,
+          top: 0
+        })
+
+        weak_self.pageSetData([], true)
       })
 
 
@@ -113,7 +116,7 @@ Component({
 
     //底部刷新
     footerRefresh: function() {
-
+    
       let weak_self = this
 
       if (!this.data.has_more) {
@@ -139,7 +142,7 @@ Component({
 
         weak_self.setData({ has_more: has_more})
 
-        weak_self.pageSetData(ms)
+        weak_self.pageSetData(ms,false)
 
       }, function() {
 
@@ -148,12 +151,27 @@ Component({
       })
     },
 
-    pageSetData: function(ms) {
+    pageSetData: function(ms, is_headerRefresh) {
+
+      let length = this.ctx.comp.sizeArray.length
       
-      this.ctx.append(ms)
+      if (is_headerRefresh) { 
 
+        this.ctx.splice(0, length, ms)
+
+      }else{
+        
+        this.ctx.append(ms)
+      }
+
+      let nodata = this.ctx.comp.sizeArray.length==0
+      this.setData({ nodata: nodata})
     }
+  },
 
+  detached: function(){
+    
+    this.ctx.destroy()
   }
 
 })

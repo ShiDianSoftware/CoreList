@@ -7,7 +7,16 @@
 .list{width: 100%;height: 100%; overflow: hidden;}
 .has_more{height: 80rpx; line-height: 80rpx; text-align: center; color: #999; font-size: 30rpx;}
 
+.nodata{position: absolute; left: 0; top:0; width: 100%; height: 100%;background: white;}
+
 .width_100{width: 100%;}
 .height_100{height: 100%;}
 
 recycle-item{width: 100%;}
+.loading{width: 32rpx; height: 32rpx; animation: rotate 0.5s linear infinite;}
+@keyframes rotate{
+0%   {transform:rotate(0deg)}
+100% {transform:rotate(360deg)}
+}
+
+

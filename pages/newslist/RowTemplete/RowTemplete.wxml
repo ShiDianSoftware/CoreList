@@ -1,3 +1,7 @@
 <template name="list1">
   <view class='row'>{{index}}: {{item.title}}</view>
 </template>
+
+<template name="list2">
+  <view class='row'>{{index}}: {{item.title}}</view>
+</template>

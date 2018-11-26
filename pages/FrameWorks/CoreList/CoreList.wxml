@@ -2,39 +2,28 @@
 
 <view class='corelist'>
 
-  <recycle-view id="list11" class='width_100 height_100' scroll-y enable-back-to-top="true" bindscrolltolower="footerRefresh" scroll-with-animation="true" scroll-top="{{top}}" batch="{{batchSetRecycleData}}">
+  <recycle-view id="{{rcid}}" class='width_100 height_100' scroll-y enable-back-to-top="true" upper-threshold="5" bindscrolltoupper="headerRefresh" lower-threshold="20" bindscrolltolower="footerRefresh" scroll-with-animation="true" scroll-top="{{top}}"
+    batch="{{batchSetRecycleData}}">
 
-    <view slot="before">长列表前面的内容</view>
+    <!-- <view slot="before">长列表前面的内容</view> -->
 
-    <recycle-item wx:for="{{dataList}}">
+    <recycle-item wx:for="{{dataList}}" wx:key="id">
 
-      <template is="{{name}}" data="{{index: item.__index__, item: item}}">
+      <template is="{{id}}" data="{{index: item.__index__, item: item}}">
       </template>
 
     </recycle-item>
 
     <view slot="after">
       <view class='has_more'>
-        <view wx:if="{{has_more}}">正在加载 ~</view>
+        <view wx:if="{{has_more}}">
+          <image class='loading' src='./imgs/loading.png'></image>
+        </view>
         <view wx:if="{{!has_more}}">没有更多啦 ~</view>
       </view>
     </view>
 
   </recycle-view>
 
-  <!-- <scroll-view >
-
-    <view class='list_content'>
-
-      <view class='list'>
-   
-        <slot></slot>
-     
-        <view class='has_more'>{{has_more?"正在载更多 ...":"没有更多啦 ~"}}</view>
-        
-      </view>
-
-    </view>
-
-  </scroll-view> -->
+ <view class='nodata' wx:if="{{nodata}}">空视图</view>
 </view>

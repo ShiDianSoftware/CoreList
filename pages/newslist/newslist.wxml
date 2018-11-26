@@ -2,6 +2,18 @@
 
 <view class='all width_100 height_100 display_flex flex_column'>
 
-    <corelist id="list1" class='flex_1 animated fadeIn'></corelist>
+  <swiper class='width_100 height_100'>
+
+    <swiper-item>
+      <corelist id="list1" class='flex_1 animated fadeIn'></corelist>
+    </swiper-item>
+
+    <swiper-item>
+      <corelist id="list2" class='flex_1 animated fadeIn'></corelist>
+    </swiper-item>
+
+  </swiper>
+
+
 
 </view>
