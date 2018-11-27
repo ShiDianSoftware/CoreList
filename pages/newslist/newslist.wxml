@@ -8,9 +8,7 @@
       <corelist id="list1" class='flex_1 animated fadeIn'></corelist>
     </swiper-item>
 
-    <swiper-item>
-      <corelist id="list2" class='flex_1 animated fadeIn'></corelist>
-    </swiper-item>
+
 
   </swiper>
 

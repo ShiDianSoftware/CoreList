@@ -1,6 +1,6 @@
 {
   "usingComponents": {
-    "corelist": "/pages/FrameWorks/CoreList/CoreList",
+    "corelist": "/pages/FrameWorks/CoreRecycleList/CoreRecycleList",
     "recycle-view": "../FrameWorks/RecycleView/recycle-view",
     "recycle-item": "../FrameWorks/RecycleView/recycle-item"
   }

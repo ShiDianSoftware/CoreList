@@ -27,10 +27,10 @@ Page({
     //   return sizeObj
     // }
 
-    let list2 = this.selectComponent('#list2')
-    list2.url = "https://abcstarapi.zhongsuchina.com/art/basic/index"
-    list2.page = this
-    list2.itemSize = { width: screenWidth, height: 100 }
+    // let list2 = this.selectComponent('#list2')
+    // list2.url = "https://abcstarapi.zhongsuchina.com/art/basic/index"
+    // list2.page = this
+    // list2.itemSize = { width: screenWidth, height: 100 }
 
   },
 
