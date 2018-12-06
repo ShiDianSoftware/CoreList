@@ -1,0 +1,114 @@
+<!-- 绘本列表一行 -->
+
+<!-- <form class='width_100' report-submit="true" bindsubmit="formSubmit"> -->
+<view class='row_all width_100 display_flex'>
+  <view class='row_all_content flex_1 display_flex '>
+    <view class="row_main products_content flex_1 display_flex  flex_column ">
+      <!-- 上面的内容 -->
+      <view class="products_top width_100 display_flex ">
+        <!-- 左边的图片 -->
+        <baner></baner>
+        <!-- 右边的描述 -->
+        <view class="products_top_right flex_1 display_flex ">
+          <view class="products_top_right_content flex_1 display_flex flex_column">
+            <view class="products_top_right_title display_flex align_items_center">
+             
+              <view class="hint_huiben huiben_border">
+                <view class='hint_huiben_content'>绘本</view>
+              </view>
+
+              <view class="products_top_right_title_content flex_1">{{index}}-莫斯的公共汽车</view>
+            </view>
+            <view class="products_explain">勤劳的莫斯Miss总是忙着在她的磨房进了……他的房里。</view>
+            <view class="share display_flex align_items_center">
+              <view class="age">
+                <view class="age_content">12岁</view>
+              </view>
+            </view>
+          </view>
+          <button hover-class="none" form-type='submit' class="products_pic_btn zindex10  width_100 height_100 left_0 top_0"></button>
+        </view>
+
+      </view>
+
+      <!-- 下面的按钮 -->
+      <view class="products_bottom display_flex width_100 ">
+        <view class='dianzan_area height_100  top_0 left_0 display_flex'>
+          <view class='blank '></view>
+          <!--zan_btn点赞点击按钮-->
+          <button hover-class="none" form-type='submit' class="zan_btn flex_1 zindex10" bindtap="like"></button>
+        </view>
+        <!-- 左边的按钮 -->
+        <view class="products_bottom_left display_flex ">
+          <view class="info display_flex  ">
+            <image class="info_pic" src="/bundle/common/zanting@3x.png"></image>
+            <view class="info_content"></view>
+          </view>
+          <view class="dianzan display_flex">
+            <!-- zan_pic_normal没赞的样式  zan_pic_selected已赞的样式 -->
+            <view class='dianzan_pic animated zan_pic_normal'></view>
+            <view class="dianzan_content">5</view>
+
+          </view>
+        </view>
+
+        <!-- 右边的按钮 & 配音 & 发布者  style='animation-delay:{{(idx%10)*0.2}}s' -->
+        <view class="products_bottom_right display_flex">
+
+          <!-- 已有配音  -->
+          <view class='display_flex'>
+            <view class="head_pic  ">
+              <image class="head_pic_sub" src='https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTIYicHStCHsIhTVHItdriatiatunHGOfe6cSxCTuCvkeygYs1ZxgHgVzPHc4o3AvPyR3EXnkMrTVUI8g/132'></image>
+              <image class="wai_pic " src="/bundle/common/tag@3x.png"></image>
+              <!--head_pic_btn用户头像点击按钮-->
+              <button bindtap='userdetail' hover-class="none" class="head_pic_btn  width_100 height_100 top_0 left_0"></button>
+            </view>
+            <view class="date">11/29</view>
+            <view class="peiyin">已配音</view>
+            <view class="peiyin display_none">发布</view>
+            <view class="money  ">
+              <view class='money_content'>￥1</view>
+              <view class="erase "></view>
+            </view>
+            <view class='products_bottom_right_blank flex_1'></view>
+
+          </view>
+
+          <!-- 右边的按钮 -->
+          <!-- 首页推荐 -->
+          <view class='shouyetuijian'>
+
+            <!-- 其他情况(其中排除了我自己发布的) -->
+            <button hover-class="none" form-type='submit' class="" bindtap="play">
+              <view class="gendu">
+                <view class='gendu_content'>免费听</view>
+              </view>
+            </button>
+
+
+            <!-- 我自己发布的 -->
+            <button hover-class="none" form-type='submit' class="" bindtap="play">
+              <view class="touting position_r display_none">
+                <view class='touting_content'>去听</view>
+              </view>
+            </button>
+
+
+
+            <!-- 已偷听 -->
+            <button hover-class="none" class="" bindtap="xiangqing">
+              <view class="touting position_r display_none">
+                <view class='touting_content'>已偷听</view>
+              </view>
+            </button>
+
+
+          </view>
+
+        </view>
+      </view>
+
+    </view>
+  </view>
+</view>
+<!-- </form> -->

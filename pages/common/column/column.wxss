@@ -1,0 +1,566 @@
+
+.products_bottom {
+  bottom: 15px;
+  height: 30px;
+  justify-content: space-between;
+}
+
+
+.row_all{
+  height: 300rpx;
+  overflow: hidden;
+ 
+}
+
+
+.shouyetuijian{
+  margin-left: 30rpx;
+}
+.recommend_content, .foreign_content {
+  font-weight: bold;
+}
+
+.price_content {
+  font-weight: normal;
+}
+
+.touting {
+  width: 88px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  background-color: #ffebee;
+  border-radius: 4px;
+}
+
+.touting_content {
+  /* margin: 0 54px; */
+  font-size: 14px;
+  color: #ff4b68;
+}
+.date{
+  margin-right: 8px;
+  align-self: flex-end;
+  /* position: relative;
+  top: 5px; */
+  color: #B3B3B3;
+  line-height: 13px;
+  font-size: 11px;
+  font-family: HYk2gj;
+}
+
+.gendu {
+  width: 88px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  background-image: linear-gradient(90deg, #ff4b68 0%, #fe8282 100%),
+                      linear-gradient(#ff4b68, #fe8282);
+  /* border: solid 2px #ff4b68; */
+  border-radius: 4px;
+}
+
+.gendu_content {
+  /* margin: 0 54px; *//* color: #ff4b68; */
+  font-size: 14px;
+  color: #fff;
+}
+
+/* 偷听按钮的=样式 */
+
+.touting {
+  width: 88px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  background-color: #ffebee;
+  border-radius: 4px;
+}
+
+.touting_content {
+  font-size: 14px;
+  color: #ff4b68;
+}
+
+/* 请外教按钮样式 */
+.qingjiao{
+  min-width:95px;
+  height:30px;
+  line-height:30px;
+  text-align:center;
+  border:1px solid #ff4b68;
+  border-radius:4px;
+
+}
+.qingjiao_content{
+  margin:0 12px;
+  font-size:13px;
+  color:#ff4b68;
+
+}
+
+.nav_blank {
+  height: 22px;
+}
+
+.nav_content {
+  height: 44px;
+}
+
+.nav_sub {
+  line-height: 44px;
+  margin: 0 15px;
+  font-size: 18px;
+  color: rgb(153, 153, 153);
+}
+
+.recommend {
+  margin-right: 30px;
+}
+
+/*color为选中当前的字体颜色样式class*/
+
+.color {
+  color: #ff4b68;
+}
+
+.main_graddad {
+  overflow: hidden;
+}
+
+.main_parsents {
+  overflow: auto;
+}
+
+.main {
+  background: #fff;
+}
+
+.main_sub {
+  margin-left: 15px;
+  margin-right: 14px;
+}
+
+.products {
+  border-bottom: solid 1px #e5e5e5;
+}
+
+/* .products_content {
+  margin-top: 14px;
+  margin-bottom: 15px;
+} */
+.row_all_content{
+
+}
+.products_top {
+  height: 78px;
+  top: 14px;
+  /* margin-bottom: 8px; */
+}
+.dianzan_area{
+  width: 70px;
+}
+.blank{
+  width: 20px;
+}
+
+.products_top_left {
+  width: 78px;
+  height: 78px;
+  /* margin-right: 12px; */
+}
+
+.products_top_left_content {
+  width: 78px;
+  height: 78px;
+  overflow: hidden;
+  background-color: #d7cfd2;
+  border-radius: 5px;
+}
+
+.products_top_left_content image {
+  width: inherit;
+  height: inherit;
+  border-radius: 5px;
+}
+
+.waijiao {
+  top: -1px;
+  left: -4px;
+  width: 40px;
+  height: 40px;
+}
+
+.time {
+  width: 100%;
+  height: 20px;
+  background-image: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.5)0%, rgba(0, 0, 0, 0)90%);
+  border-radius: 0px 0px 3px 3px;
+  bottom: 0;
+}
+
+.time_content,.shijian_area {
+  font-size: 11px;
+  color: #fff;
+}
+.zong_time{
+  text-align: right;
+}
+.bofang_time{
+  text-align: left;
+}
+
+.fenge{
+  width: 1px;
+  height: 10px;
+  background: #e6e6e6;
+}
+
+.play {
+  top: 50%;
+  left: 50%;
+  margin-left: -18px;
+  margin-top: -18px;
+  width: 36px;
+  height: 36px;
+}
+
+.products_top_right{
+  height: 78px;
+  top: 0 ;
+  left: 90px;
+}
+.products_top_right_content {
+  justify-content: space-between;
+  /* margin-top: 8px; */
+}
+
+.products_top_right_title_content {
+  line-height: 20px;
+  font-size: 17px;
+  color: rgb(53, 53, 53);
+  word-break: break-all;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  font-family: HYk2gj;
+
+}
+
+.age {
+  /* position: relative;
+  top: 2px; */
+  border-radius: 2px;
+  height: 18px;
+  line-height: 18px;
+  text-align: center;
+}
+
+.products_explain {
+  font-size: 13px;
+  color: rgb(136, 136, 136);
+  word-break: break-all;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+}
+
+.share {
+  line-height: 15px;
+  font-size: 12px;
+}
+
+.age {
+  background-color: rgb(241, 247, 255);
+}
+
+.age_content {
+  color: rgb(100, 166, 253);
+  margin: 0 9px;
+}
+
+.info {
+  margin-right: 15px;
+}
+
+.info, .dianzan, .products_bottom_right_left {
+  align-items: flex-end;
+  
+}
+
+.products_bottom_right_left {
+  margin-right: 15px;
+  margin-bottom: 2px;
+}
+
+.info_btn, .zan_btn {
+  top: 6px;
+}
+
+.dianzan_pic {
+  width: 16px;
+  height: 16px;
+}
+
+.info_pic {
+  width: 15px;
+  height: 15px;
+  align-items: flex-end;
+}
+
+.info_content, .dianzan_content {
+  margin-left: 4px;
+  font-size: 13px;
+  line-height: 14px;
+  color: rgb(204, 204, 204);
+}
+
+.head_pic {
+  align-self: flex-end;
+  margin-right: 10px;
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+}
+.margin_left8{
+  margin-left: 2px !important;
+}
+
+.head_pic_sub {
+  width: 100%;
+  border-radius: 100%;
+}
+
+.wai_pic {
+  bottom: -2px;
+  right: -5px;
+  width: 15px;
+  height: 15px;
+}
+
+.peiyin {
+  /* position: relative;
+  top: 5px; */
+  white-space: nowrap;
+  align-self: flex-end;
+  line-height: 13px;
+  font-size: 12px;
+  color: rgb(178, 178, 178);
+  /* margin-right: 12px; */
+}
+
+.bottom_8{bottom: 4px !important;}
+
+.money {
+  /* position: relative;
+  top: 3px; */
+  align-self: flex-end;
+  line-height: 13px;
+  font-size: 13px;
+  margin-left: 5px;
+  color: rgb(102, 102, 102);
+}
+
+.erase {
+  bottom: 7px;
+  /* bottom: 50%;
+  margin-bottom: -1px; */
+  width: 105%;
+  height: 2px;
+  background: #666;
+}
+
+.price {
+  width: 95px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  border-radius: 4px;
+  background-image: linear-gradient(90deg, #ff4b68 0%, #fe8282 100%),
+                      linear-gradient(#ff4b68, #fe8282);
+}
+
+.price_content {
+  /* margin: 0 16px; */
+  font-size: 13px;
+  color: rgb(255, 255, 255);
+}
+
+.person {
+  position: fixed;
+  right: 15px;
+  bottom: 101px;
+}
+
+.person_content {
+  border: solid 5px #fff;
+  box-shadow: 0px 0px 8px 0px #a7aeb7;
+  border-radius: 100%;
+}
+
+.person_pic {
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+}
+
+.person_blank {
+  top: 50%;
+  left: 50%;
+  margin-top: -10px;
+  margin-left: -10px;
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+}
+
+.person_blank image, .person_pic image {
+  border-radius: 100%;
+}
+
+/*绘本、故事、音乐、动画等样式  */
+
+/*绘本，。故事。。。等样式  */
+
+/* 绘本的字体颜色和边框 */
+
+.huiben_border {
+  color: #a81fff;
+  border: solid 1px #a81fff;
+}
+
+.gushi_border {
+  color: #34d2d9;
+  border: solid 1px #34d2d9;
+}
+
+.yinyue_border {
+  color: #ffcf10;
+  border: solid 1px #ffcf10;
+}
+
+.hint_huiben {
+  border-radius: 2px;
+  font-family: HYk2gj;
+  font-weight: bold;
+  line-height: 18px;
+  margin-right: 10px;
+  text-align: center;
+}
+
+.hint_huiben_content {
+  padding: 0 3px;
+  font-size: 12px;
+}
+
+/*发现、我的、收藏、偷听、页面上的点赞样式  zan_pic_normal未赞样式   zan_pic_selectedu已点赞样式*/
+
+.zan_pic_selected {
+  background: url("http://abcstar.zhongsuchina.com/AbcStarWaiJiao/bundle/common/yizan@3x.png?dd") no-repeat;
+  background-size: 100% 100%;
+}
+
+.zan_pic_normal {
+  background: url("http://abcstar.zhongsuchina.com/AbcStarWaiJiao/bundle/common/zan@3x.png") no-repeat;
+  background-size: 100% 100%;
+}
+
+.zindex10 {
+  z-index: 10;
+}
+
+.debug {
+  border: solid 2px red !important;
+}
+
+.debug_green {
+  border: solid 2px green !important;
+}
+
+.display_flex {
+  display: flex;
+}
+
+.flex_column, .flex_row {
+  display: flex;
+}
+
+.flex_column {
+  flex-direction: column;
+}
+
+
+
+
+.cover_btn {
+  width: 100%;
+  height: 100%;
+
+  left: 0;
+  top: 0;
+}
+
+.cursor_pointer {
+  cursor: pointer;
+}
+
+.overflow_hidden {
+  overflow: hidden;
+}
+
+.over_hidden {
+  overflow: hidden;
+}
+
+.width_100 {
+  width: 100%;
+}
+
+.height_100 {
+  height: 100%;
+}
+
+.display_hidden {
+  opacity: 0;
+}
+
+.display_none {
+  display: none !important;
+}
+
+.flex_1 {
+  flex: 1;
+}
+
+.align_items_center {
+  align-items: center;
+}
+
+.justify_center {
+  justify-content: center;
+}
+
+.flex_1 {
+  flex: 1;
+}
+
+.left_0 {
+  left: 0;
+}
+
+.top_0 {
+  top: 0;
+}
+
+.bottom_0 {
+  bottom: 0;
+}
+
+.right_0 {
+  right: 0;
+}
+

@@ -1,25 +1,387 @@
-view{margin: 0; padding: 0;}
+
+.fadeIn{animation: fadeIn 0.5s linear;-webkit-animation: fadeIn 0.5s linear;  opacity: 0; animation-fill-mode: forwards;}
+
+corelist{width: 100%; height: 100%;}
+@keyframes fadeIn {
+  0% {opacity: 0} 
+  100% {opacity: 1; }
+  }
+
+.recommend_content, .foreign_content {
+  font-weight: bold;
+  font-size: 42rpx;
+}
+tijjao{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+/* top_jianju 页面顶部水平对齐样式 */
+.top_jianju{
+  margin-right: 100rpx;
+}
+.border_after,.border_top{
+  position: relative;
+}
+.border_after::after{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2rpx;
+  width: 100%;
+  background-color: #e5e5e5;
+  content: ' ';
+  transform: scale(1,0.3);
+}
+.border_top::after{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2rpx;
+  width: 100%;
+  background-color: #e5e5e5;
+  content: ' ';
+  transform: scale(1,0.3);
+}
+luyin{
+  width: 100%;
+  height: 100%;
+}
+bofangchuang{
+  position: relative;
+  z-index: 500;
+}
+tanchuang{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2000;
+}
+sure{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+}
+.ul{
+  overflow: hidden;
+}
+
+nothing{
+  width: 100%;
+  height: 100%;
+  
+}
+
+.position_static{
+  position: static;
+}
+input,button,a,select {outline:0 none !important;}
+.fixed_top{position: fixed;top: 0;left: 0}
+.fixed_bottom{position: fixed;bottom: 0;left: 0}
+button::after{
+  background: none;
+}
+
+ol, ul {list-style: none;}
+a:hover{cursor: pointer;}
 .zindex10{z-index: 10;}
+
+#content {background-color: #f3f3f3; width: 100%; height: 100%;}
+.makeContentDomHVCenter{justify-content: center;align-items: center; }
 .debug{border: solid 2px red !important;}
 .debug_green{border: solid 2px green !important;}
 .display_flex{display: flex;}
 .flex_column,.flex_row{display: flex;}
 .flex_column{flex-direction: column;}
+.flex_row{flex-direction: row;display: flex;}
+.contentModeAspectFit{object-fit:contain;}
+button:active{background-color:transparent !important; }
+button{cursor: pointer;}
+.logo{ display:flex ;margin-left: 20px;}
 .position_relative{ position: relative;}
 .position_absolute{ position: absolute;}
 .cover_btn{width: 100%; height: 100%; position: absolute;left: 0;top: 0;}
+p{margin: 0 !important;}
+.align_items_center{align-items: center;}
+.justify_center{justify-content: center;}
+.justify_align{align-items: center;justify-content: center;}
+.align_self_center{align-self: center;}
+input {background: transparent !important;}
 .cursor_pointer{cursor: pointer;}
+.minirefresh-theme-default .minirefresh-upwrap{height: 20px !important;padding: 0 !important;}
+.minirefresh-totop{ display: none !important;}
+.minirefresh-theme-default .status-nomore .upwrap-tips{padding: 0 !important; line-height: 30px;}
+.minirefresh-wrap{position: relative !important;}
+
 .overflow_hidden{overflow: hidden;}
+
 .over_hidden{overflow: hidden;}
+.bold{font-weight: bold;}
 .width_100{width: 100%;}
 .height_100{height: 100%;}
 .display_hidden{opacity: 0}
 .display_none{display: none !important;}
+.display_show{display: flex !important;}
 .flex_1{flex: 1;}
-.align_items_center{align-items: center;}
-.justify_center{justify-content: center;}
-.left_0{left:0;}
-.top_0{top:0}
-.bottom_0{bottom:0;}
+.border_none{border: none;}
+.obj_contain{object-fit: contain;}
+.obj_cover{object-fit: cover;}
+
+.btn_deng{background: url("/Work/App/RenWu/PlanDay/img/tixing.png") no-repeat center}
+.btn_deng_hl{background: url("/Work/App/RenWu/PlanDay/img/tixing_hl.png") no-repeat center}
+.background_transparent {background: transparent !important;}
+
+.overflow_scroll{overflow: scroll;}
+.overflow_auto{overflow: auto;}
+.vue-star-rating{height: 40px !important;}
+
+.fadeIn{animation: myFadeIn 0.4s linear;  opacity: 0; animation-fill-mode: forwards;}
+.myFadeIn{animation: myFadeIn 0.4s linear; animation-delay: 0.6s; opacity: 0; animation-fill-mode: forwards;}
+@keyframes myFadeIn {
+  0% {opacity: 0} 
+  100% {opacity: 1; }
+  }
+
+
+.rotate{animation: rotate_anim 1s linear infinite}
+@keyframes rotate_anim{
+  form {-webkit-transform:rotate(360deg);
+    transform:rotate(360deg);}
+  to  {-webkit-transform:rotate(360deg);
+    transform:rotate(360deg);}
+
+
+}
+
+
+/*.layui-layer-title{display: none !important;}*/
+
+/*.multiselect{display: none;}*/
+
+canvas{z-index: 0;}
+
+.left_0{left: 0;}
 .right_0{right: 0;}
-corelist{width: 100%; height: 100%; overflow: hidden;}
+.top_0{top: 0;}
+.bottom_0{bottom: 0;}
+
+/*绘本，。故事。。。等样式  */
+/* 绘本的字体颜色和边框 */
+.cartoon_border{
+  color: #0aadf0;
+  border: solid 1px #0aadf0 ;
+}
+.huiben_border{
+  color: #a81fff;
+  border: solid 1px #a81fff;
+}
+.gushi_border{
+  color: #34d2d9;
+  border: solid 1px #34d2d9;
+}
+.yinyue_border{
+  color: #ffcf10;
+  border: solid 1px #ffcf10;
+}
+
+.hint_huiben{
+  border-radius: 4rpx;
+  font-family: HYk2gj;
+	font-weight: bold;
+	line-height: 36rpx;
+  margin-right: 20rpx;
+  text-align: center;
+  
+}
+.hint_huiben_content{
+  padding: 0 7rpx;
+	font-size: 24rpx;
+}
+
+
+.products_bottom_right_left {
+   /* width: 190rpx;  */
+  margin-right: 30rpx;
+}
+image{
+  width: 100%;
+  height: 100%;
+}
+
+
+.top{
+	background: #fff;
+}
+.top_content{
+	margin: 0 15px;
+}
+.top_last_pic{
+	width: 10px;
+	height: 19px;
+}
+.top_last{
+  left: -30rpx;
+  width: 82rpx;
+  height: 100%;
+}
+
+.top_content_sub{
+	font-size: 18px;
+	color: #333333;
+}
+
+button{
+  margin: 0;
+	background: none ; 
+  padding: 0;
+}
+button::after{
+  border: 0 !important;
+}
+
+page{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  
+  /* position: fixed; */
+}
+/*time 图片上面的时间背景阴影 */
+.time{
+	width: 100%;
+	height: 40rpx;
+	 background-image: -webkit-linear-gradient(bottom,rgba(0,0,0,0.5)0%,rgba(0,0,0,0)90%); 
+	border-radius: 0rpx 0rpx 6rpx 6rpx;
+}
+
+/*drop_pic_normal 睬的默认样式   drop_pic_selected选中样式*/ 
+.drop_pic_selected{
+	background: url("http://abcstar.zhongsuchina.com/AbcStarWaiJiao/bundle/common/cai_sel@3x.png?dd") no-repeat;
+	background-size: 100% 100%;
+}
+.drop_pic_normal{
+	background: url("http://abcstar.zhongsuchina.com/AbcStarWaiJiao/bundle/common/cai@3x.png?dd") no-repeat;
+	background-size: 100% 100%;
+}
+/*ding_pic_normal顶的默认样式   ding_pic_selected顶的选中样式*/
+.ding_pic_selected{
+	background: url("http://abcstar.zhongsuchina.com/AbcStarWaiJiao/bundle/common/yizan@3x.png?kk") no-repeat;
+	background-size: 100% 100%;
+}
+.ding_pic_normal{
+	background: url("http://abcstar.zhongsuchina.com/AbcStarWaiJiao/bundle/common/zan@3x.png?dd") no-repeat;
+	background-size: 100% 100%;
+}
+
+/*发现、我的、收藏、偷听、页面上的点赞样式  zan_pic_normal未赞样式   zan_pic_selectedu已点赞样式*/
+.zan_pic_selected{
+	background: url("http://abcstar.zhongsuchina.com/AbcStarWaiJiao/bundle/common/yizan@3x.png?dd") no-repeat;
+	background-size: 100% 100%;
+}
+.zan_pic_normal{
+	background: url("http://abcstar.zhongsuchina.com/AbcStarWaiJiao/bundle/common/zan@3x.png") no-repeat;
+	background-size: 100% 100%;
+}
+
+
+/*详情页的点赞样式  */
+.zan_xq{
+  color: rgb(153,153,153);
+  font-size: 22rpx;
+}
+/*父子选择器  */
+.colorff4b68{
+  color: #f44d4d !important;
+}
+
+.zan_xq_normal{
+	background: url("http://abcstar.zhongsuchina.com/AbcStarWaiJiao/bundle/common/zan@3x.png") no-repeat;
+	background-size: 100% 100%;
+}
+.colorff4b68 .zan_xq_selected{
+	background: url("http://abcstar.zhongsuchina.com/AbcStarWaiJiao/bundle/common/yizan@3x.png?kjlk") no-repeat;
+	background-size: 100% 100%;
+}
+
+/*收藏和未收藏的两种，切换display_none即可用  */
+.collection_content_wei,.collection_content_yi{
+	font-size: 22rpx;
+}
+.collection_content_wei{
+  color: rgb(153,153,153);
+}
+.collection_content_yi{
+  color: #ff9900;
+}
+
+/*collection_pic_normal收藏   collection_pic_selected已收藏按钮*/
+
+.collection_pic_normal{
+	background: url("http://abcstar.zhongsuchina.com/AbcStarWaiJiao/bundle/common/shoucanag@3x.png?dd") no-repeat;
+	background-size: 100% 100%;
+}
+.collection_pic_selected{
+	background: url("http://abcstar.zhongsuchina.com/AbcStarWaiJiao/bundle/common/yishoucang@3x.png?aa") no-repeat;
+	background-size: 100% 100%;
+}
+
+/*play_pic_bofang播放时的样式class    play_pic_zanting暂停时的样式class*/
+.play_pic_bofang{
+	background: url("http://abcstar.zhongsuchina.com/AbcStarWaiJiao/bundle/common/bofang@3x.png?dd") no-repeat;
+	background-size: 100% 100%;
+}
+.play_pic_zanting{
+	background: url("http://abcstar.zhongsuchina.com/AbcStarWaiJiao/bundle/common/zanting_da@3x.png?dd") no-repeat;
+	background-size: 100% 100%;
+}
+
+
+
+/* 所有页面的关注按钮样式 */
+.users_info_right{
+	height: 60rpx;
+	line-height: 60rpx;
+	text-align: center;
+	background-color: #ffebee;
+	border-radius: 8rpx;
+}
+.users_info_right_content{
+	margin: 0 54rpx;
+	font-size: 24rpx;
+	color: #f44d4d;
+}
+
+/* 所有页面的已关注按钮样式 */
+.users_right_content{
+	background-color: #f5f5f5;
+	border-radius: 8rpx;
+	height: 60rpx;
+	line-height:60rpx;
+	text-align: center;
+}
+.users_explain{
+	margin: 0 42rpx;
+	font-size: 24rpx;
+	color: #666666;
+}
+
+
+
+/*所有页面3-6岁调试  */
+.age{
+  position: relative;
+  top: 3.5rpx;
+}
+
+
+
+
+
+

@@ -1,0 +1,35 @@
+<!-- 左边的图片 -->
+<view class="products_top_left display_flex position_absolute">
+
+  <view class="products_top_left_content position_absolute">
+    <image mode='aspectFill' src="https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTIYicHStCHsIhTVHItdriatiatunHGOfe6cSxCTuCvkeygYs1ZxgHgVzPHc4o3AvPyR3EXnkMrTVUI8g/132"></image>
+
+    <!-- 中文的外教提示图 -->
+    <view class="waijiao position_absolute">
+      <image src="/bundle/common/waijiao@3x.png"></image>
+
+      <image class='display_none' src="/bundle/common/waijiao_yw@3x.png"></image>
+    </view>
+
+    <view class="play position_absolute">
+
+      <image class='shouye_zanting display_none' src="/bundle/common/bofang_shouye@3x.png "></image>
+
+      <image class='shouye_bofang animated fadeIn' src="/bundle/common/bofangzhong_shouye@3x.png"></image>
+
+    </view>
+    <view class="time display_flex justify_center align_items_center position_absolute bottom_0">
+
+      <view class="zong_time time_content">8:02</view>
+
+      <view class='shijian_area display_flex justify_center align_items_center'>
+        <view class="zong_time time_content">5:20</view>
+        /
+        <view class="bofang_time time_content">2:02</view>
+      </view>
+
+    </view>
+  </view>
+  <!-- left_bofang_btn 点击播放按钮 -->
+  <button bindtap='play' form-type='submit' hover-class='none' class='left_bofang_btn cover_btn zindex10'></button>
+</view>

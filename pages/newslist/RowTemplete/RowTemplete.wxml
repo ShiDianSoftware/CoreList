@@ -1,4 +1,0 @@
-<template name="list1">
-  <row index="{{index}}" item="{{item}}"></row>
-</template>
-

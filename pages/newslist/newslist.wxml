@@ -1,11 +1,17 @@
-<import src='./RowTemplete/RowTemplete' />
 
 <view class='all width_100 height_100 display_flex flex_column'>
 
   <swiper class='width_100 height_100'>
 
     <swiper-item>
-      <corelist id="list1" class='flex_1 animated fadeIn'></corelist>
+      <corelist2018 id="list1" class='flex_1'>
+        <view class='section' wx:for="{{datalist}}" wx:for-index="index0">
+          <view class='list_item' wx:for="{{datalist[index0]}}" wx:for-index="index1">
+             <column wx:if="{{index0>=mini && index0<= maxi}}"></column>
+             <image wx:if="{{index0<mini || index0 > maxi}}" src='./pic.png'></image>
+          </view>
+        </view>
+      </corelist2018>
     </swiper-item>
 
 

@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "baner": "/pages/common/Baner/Baner"
+  }
+}

@@ -1,0 +1,8 @@
+
+<view class='has_more'>
+    <view class='has_more_content'>
+    <image wx:if="{{hasmore}}" class='loading' src='../imgs/loading.png'></image>
+
+    <view wx:if="{{!hasmore}}" class='more '>没有更多啦 ~</view>
+  </view>
+</view>

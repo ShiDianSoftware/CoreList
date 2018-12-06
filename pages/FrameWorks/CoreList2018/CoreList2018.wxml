@@ -1,0 +1,11 @@
+<view bindtap='rowAction' class='corelist {{can_scroll && request_status==102?"":"pointer_events_none"}}'>
+
+  <scroll-view id="list1sv" bindscroll="scrollAction" class='width_100 height_100' scroll-y bindscrolltoupper="headerRefresh" bindscrolltolower="footerRefresh">
+  
+    <slot></slot>
+
+  </scroll-view>
+
+  <view class='nodata' wx:if="{{nodata}}">空视图</view>
+
+</view>

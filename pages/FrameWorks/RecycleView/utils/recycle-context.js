@@ -25,7 +25,6 @@ function RecycleContext({
   this.placeholderClass = placeholderClass
   page._recycleViewportChange = recycleViewportChangeFunc
   this.comp = page.selectComponent('#' + id)
-
   this.itemSize = itemSize
   this.itemSizeOpt = itemSize
   // if (!this.comp) {
@@ -69,7 +68,6 @@ function RecycleContext({
   }
 }
 RecycleContext.prototype.checkComp = function () {
- 
   if (!this.comp) {
     this.comp = this.page.selectComponent('#' + this.id)
     if (this.comp) {
@@ -335,7 +333,6 @@ RecycleContext.prototype._recalculateSize = function (list) {
   let column = 0
   const sizeArray = []
   // 把整个页面拆分成200*200的很多个方格, 判断每个数据落在哪个方格上
- 
   for (let i = 0; i < list.length; i++) {
     if (typeof list[i].__index__ === 'undefined') {
       list[i].__index__ = i
@@ -353,15 +350,11 @@ RecycleContext.prototype._recalculateSize = function (list) {
     }
     itemSize = Object.assign({}, itemSize)
     sizeArray.push(itemSize)
-    
     // 判断数据落到哪个方格上
     // 超过了宽度, 移动到下一行, 再根据高度判断是否需要移动到下一个方格
-
     if (offsetLeft + itemSize.width > compData.width) {
       offsetLeft = itemSize.width
-      let sizeObj = sizeArray[sizeArray.length - 2]
-
-      offsetTop += sizeObj.height // 加上最后一个数据的高度
+      offsetTop += sizeArray[sizeArray.length - 2].height // 加上最后一个数据的高度
       // 根据高度判断是否需要移动到下一个方格
       if (offsetTop >= RECT_SIZE * (line + 1)) {
         line += parseInt((offsetTop - RECT_SIZE * line) / RECT_SIZE, 10)

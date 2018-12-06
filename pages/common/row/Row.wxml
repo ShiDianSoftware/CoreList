@@ -1,3 +1,0 @@
-<view class="row" bindtap='detailAction'>
-  {{index}}.这是一行
-</view>
