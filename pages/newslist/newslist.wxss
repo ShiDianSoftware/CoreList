@@ -8,5 +8,6 @@ recycle-item{display: flex; flex: 1;overflow: hidden; background: darkgray;width
 
 .section{width: 100%; overflow: hidden;}
 .list_item{height: 150px;}
+.column{animation-duration: 0.3s !important;}
 column{height: 300rpx !important;}
 

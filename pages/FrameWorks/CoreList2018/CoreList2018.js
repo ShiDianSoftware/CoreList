@@ -3,14 +3,14 @@ const app = getApp();
 
 let AppHttp = require('../AppHttp/AppHttp.js');
 
+const ps = 10
+
 Component({
 
   /**
    * 组件的初始数据
    */
   data: {
-
-    scrolling: false, //页面是否正在滚动
     can_scroll: true, //页面是否可以滚动
     has_more: true, //是否有更多数据
     request_status: 102, // 102没有请求或请求完成 101开始请求
@@ -19,10 +19,7 @@ Component({
 
   ready: function () {
 
-    this.ps = 10
-    let weak_self = this
 
-    this.headerRefresh()
 
   },
 
@@ -32,9 +29,16 @@ Component({
    */
   methods: {
 
-    scrollAction: function (e) {
+    refresh: function (params) {
 
-      // return;
+      if (params != null) {
+        this.params = params
+      }
+
+      this.headerRefresh()
+    },
+
+    scrollAction: function (e) {
 
       if (this.data.request_status == 101) {
         if (this.i != null) { clearTimeout(this.i); };return
@@ -48,9 +52,9 @@ Component({
 
       let tsr = weak_self.tsr || 0
 
-      let time_is_too_short = ts1 - tsr < 500
+      let time_is_too_long = ts1 - tsr > 400
 
-      if (!time_is_too_short) {
+      if (time_is_too_long) {
         
         if (this.i != null) {clearTimeout(this.i);}
         
@@ -75,34 +79,25 @@ Component({
         if (this.i != null) { clearTimeout(this.i); }; return
       }
 
-      let weak_self = this
-
       let scrollTop = e.detail.scrollTop
-      let top_index = scrollTop / 150
-      let top_page_num = parseInt(top_index / weak_self.ps)
+      let top_index = scrollTop / this.rowH
+      let top_page_num = parseInt(top_index / ps)
 
-      let obj = weak_self.calPagenNum(top_page_num)
+      let obj = this.calPagenNum(top_page_num)
 
-      weak_self.page.setData({ mini: obj.mini, maxi: obj.maxi })
+      this.page.setData({ mini: obj.mini, maxi: obj.maxi })
 
       let d = new Date()
       let ts = d.valueOf()
 
-      weak_self.tsr = ts 
-
-      if (weak_self.data.scrolling == false) { return }
-
-      weak_self.setData({ scrolling: false })
-
+      this.tsr = ts 
     },
 
     calPagenNum: function (page_num){
 
-      let weak_self = this
+      let page_num_last = this.page_num
 
-      let page_num_last = weak_self.page_num
-
-      weak_self.page_num = page_num
+      this.page_num = page_num
 
       let maxi = page_num + 1
       if (maxi >= this.length - 1) { maxi = this.length -1 }
@@ -112,15 +107,6 @@ Component({
 
       return { mini: mini, maxi: maxi}
 
-    },
-
-    refresh: function (params) {
-
-      if (params != null) {
-        this.params = params
-      }
-
-      this.headerRefresh()
     },
 
     headerRefresh: function () {
@@ -137,13 +123,13 @@ Component({
       this.p = 1
 
       params.page = this.p
-      params.page_size = this.ps
+      params.page_size = ps
 
       weak_self.setData({ can_scroll: false})
 
       AppHttp.post(url, params, 0, function (ms) {
 
-        let has_more = ms.length >= weak_self.ps
+        let has_more = ms.length >= ps
 
         weak_self.data.has_more = has_more
 
@@ -180,13 +166,13 @@ Component({
       let url = this.url
       let params = this.params || {}
       params.page = this.p
-      params.page_size = this.ps
+      params.page_size = ps
 
       weak_self.setData({ can_scroll: false })
 
       AppHttp.post(url, params, 0, function (ms) {
 
-        let has_more = ms.length >= weak_self.ps
+        let has_more = ms.length >= ps
 
         weak_self.data.has_more = has_more
 

@@ -18,9 +18,10 @@ Page({
     app.AppHttp = AppHttp
 
     let list1 = this.selectComponent('#list1')
+    list1.rowH = 150
     list1.url = "https://abcstarapi.zhongsuchina.com/art/basic/index"
     list1.page = this
-  
+    list1.headerRefresh()
 
   },
 
